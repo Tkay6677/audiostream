@@ -31,7 +31,10 @@ export default function AudioStreamer() {
   };
 
   useEffect(() => {
-    socketRef.current = io();
+    socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL || 'https://audiostream-delta.vercel.app', {
+      transports: ['websocket'],
+      path: '/api/socketio'
+    });
     
     socketRef.current.on('connect', () => {
       setConnectionStatus('connected');
