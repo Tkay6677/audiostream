@@ -15,6 +15,10 @@ interface SocketWithIO {
 const rooms = new Map();
 
 export const GET = async (req: Request, res: NextApiResponse & SocketWithIO) => {
+  if (!res.socket?.server) {
+    return new Response('Socket server not available', { status: 503 });
+  }
+
   if (!res.socket.server.io) {
     const httpServer: SocketServer = res.socket.server;
     const io = new SocketIOServer(httpServer, {
