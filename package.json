@@ -2,11 +2,11 @@
   "name": "audio-streaming-app",
   "version": "0.1.0",
   "private": true,
-    "scripts": {
-      "dev": "node server.js",
-      "build": "next build",
-      "start": "NODE_ENV=production node server.js"
-    },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
   "dependencies": {
     "next": "14.0.0",
     "react": "^18",
@@ -15,7 +15,8 @@
     "socket.io-client": "^4.7.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10",
+    "@types/react": "19.1.6",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
